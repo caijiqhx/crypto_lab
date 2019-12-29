@@ -4,8 +4,6 @@
 #include <time.h>
 
 #define MODULUS_SIZE 1024       // 模数 n 的位数
-// #define BLOCK_SIZE
-#define BUFFER_SIZE ((MODULUS_SIZE/8)/2) // p, q 字节数
 #define MESSAGE_SIZE 100
 
 typedef struct {
@@ -23,7 +21,6 @@ typedef struct {
 
 // 生成密钥对
 void generate_key(private_key *kpr, public_key *kpu) {
-    char buf[BUFFER_SIZE];
     int i;
     time_t seed;
     gmp_randstate_t rstate;
